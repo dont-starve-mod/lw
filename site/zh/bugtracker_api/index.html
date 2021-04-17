@@ -101,14 +101,14 @@
         <meta name="author" content="老王">
       
       
-        <link rel="canonical" href="https://dont-starve-mod.gitee.io/ohto-ai-doc/zh/test/">
+        <link rel="canonical" href="https://dont-starve-mod.gitee.io/ohto-ai-doc/zh/bugtracker_api/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
-        <title>Test - 老王的饥荒模组合集</title>
+        <title>API - 老王的饥荒模组合集</title>
       
     
     
@@ -151,6 +151,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -176,7 +181,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test
+              API
             
           </span>
         </div>
@@ -293,13 +298,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../bugtracker_index/" class="md-tabs__link">
+      <a href="../bugtracker_index/" class="md-tabs__link md-tabs__link--active">
         错误追踪
       </a>
     </li>
@@ -481,12 +488,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         错误追踪
@@ -526,11 +535,66 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../bugtracker_api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         API
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    给开发者的留言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.设定接收条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    2.设定邮箱
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    3.设定URL
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -605,16 +669,182 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    给开发者的留言
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.设定接收条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    2.设定邮箱
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    3.设定URL
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Test</h1>
+                  <h1>API</h1>
                 
-                <p><a class="md-button md-button--primary" href="#">Subscribe on workshop</a>
-<a class="md-button md-button--primary" href="#">Mod content</a></p>
+                <h2 id="_1">给开发者的留言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>错误追踪器内置了日志发送功能，玩家只需要点击按钮，就能把日志直接发到你的手里。
+支持两种发送方法: <a href="#email">邮箱</a>、<a href="#url">URL</a>。</p>
+<p>要实现这个功能，你的mod需要进行一些简单的配置。请在 <code>modinfo.lua</code> 或 <code>modmain.lua</code> 中以全局变量的形式声明 <code>bugtracker_config</code>表，所有配置都应写在这张表内。类似这样:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;myemail@dst.com&quot;</span><span class="p">,</span>
+    <span class="n">upload_client_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">upload_server_log</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="c1">-- 其它配置项目...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="1">1.设定接收条件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>你可以指定哪些日志允许上传，避免收到一些无意义的报错信息。</p>
+<p>可<a href="#email">跳过此设置</a>，使用默认值。</p>
+<div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">-- * 是否接受客户端报错日志，默认true。</span>
+    <span class="c1">-- * 大部分mod都包含会在客户端运行的代码，所以建议都设置为true。</span>
+    <span class="n">upload_client_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="c1">-- * 是否接受服务器报错日志，客户端mod默认false，服务器mod默认true。</span>
+    <span class="c1">-- * 建议默认。</span>
+    <span class="n">upload_server_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="c1">-- * 是否接受其它mod引起的报错日志，默认true。</span>
+    <span class="c1">-- * 可能有助于解决mod之间的冲突</span>
+    <span class="n">upload_other_mods_crash_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="c1">-- 其它配置项目...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="email">2.设定邮箱<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
+<p>如果你希望玩家将日志发送到你指定的邮箱，你需要添加<code>email</code>键，如下所示:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">-- * 注意: 不要设置成工作的邮箱！建议注册一个新邮箱专门用于接收日志。</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;myemail@dst.com&quot;</span><span class="p">,</span>
+
+    <span class="c1">-- * 邮件内容默认为英文，如果你想接收中文邮件，请将`lang`键设置为&quot;CHI&quot;。</span>
+    <span class="n">lang</span> <span class="o">=</span> <span class="s2">&quot;CHI&quot;</span><span class="p">,</span>
+
+    <span class="c1">-- 其它配置项目...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>这样一来，当玩家点击上传日志按钮时，日志会即刻送达你的邮箱。</p>
+<p><img alt="" src="https://img.imgdb.cn/item/605466d4524f85ce291c37da.png" /></p>
+<p>每日发送上限为100封。（理解理解，我怕发的太频繁账号被网易封了）</p>
+<h2 id="url">3.设定URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<p>如果你恰好有一个网络服务器，强烈建议你配置一个专用的上传URL，日志信息将直接以POST的方法发送至你的服务器。</p>
+<p>该配置的优先级高于 <code>email</code> 。如果同时设置 <code>email</code> 和 <code>url</code> ，只有 <code>url</code> 会生效。</p>
+<div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">-- * 请务必带上协议，如 http:// 或 https://</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:8000/demo/&quot;</span><span class="p">,</span>
+
+    <span class="c1">-- 其它配置项目...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>上传的数据结构为: <code>&lt;摘要区字节数&gt; 摘要区（json格式）日志内容（纯字符串）</code> 。</p>
+<p>这是使用python-django的后端解析示例，可供参考。（我没学过php和java，所以没有例子）</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">parsebody</span><span class="p">(</span><span class="n">body</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;饥荒只能POST字符串，服务器需要对上传的内容进行解析。</span>
+<span class="sd">    数据结构为 &lt;摘要区字节数&gt; 摘要区（json格式） 日志内容（纯字符串）</span>
+<span class="sd">    摘要区包含一些基础信息，日志则包含详细的报错内容。</span>
+
+<span class="sd">    摘要结构:</span>
+<span class="sd">    gameversion &lt;str&gt;   饥荒版本号</span>
+<span class="sd">    platform    &lt;str&gt;   运行平台</span>
+<span class="sd">    playername  &lt;str&gt;   向您发送日志的玩家昵称</span>
+<span class="sd">    modname     &lt;str&gt;   模组名</span>
+<span class="sd">    modversion  &lt;str&gt;   模组版本号</span>
+<span class="sd">    diagnose    &lt;str&gt;   诊断信息</span>
+<span class="sd">    timestamp   &lt;int&gt;   崩溃发生的时间戳</span>
+<span class="sd">    ingame      &lt;bool&gt;  崩溃发生在世界启动后</span>
+<span class="sd">    isserver    &lt;bool&gt;  崩溃点位于服务器</span>
+<span class="sd">    isdedicated &lt;bool&gt;  崩溃点位于专用服务器</span>
+<span class="sd">    apiversion  &lt;str&gt;   错误追踪器版本号</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;^&lt;(</span><span class="se">\\</span><span class="s2">d+)&gt;.&quot;</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># parse abstract length</span>
+        <span class="n">abslenstr</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">abslen</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">abslenstr</span><span class="p">)</span>
+        <span class="c1"># don&#39;t forget `&lt;` and `&gt;`!</span>
+        <span class="n">absstart</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">abslenstr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="c1"># parse abstract, note abstract may contain utf-8 character.</span>
+        <span class="n">jsonstr</span> <span class="o">=</span> <span class="n">body</span><span class="p">[</span><span class="n">absstart</span><span class="p">:</span> <span class="n">absstart</span> <span class="o">+</span> <span class="n">abslen</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Here we get abstract!</span>
+        <span class="n">abstract</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonstr</span><span class="p">)</span>
+        <span class="c1"># Here we get log content!</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="n">body</span><span class="p">[</span><span class="n">absstart</span> <span class="o">+</span> <span class="n">abslen</span><span class="p">:</span> <span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;abstract&quot;</span>  <span class="p">:</span> <span class="n">abstract</span><span class="p">,</span>
+            <span class="s2">&quot;log&quot;</span>       <span class="p">:</span> <span class="n">log</span><span class="p">,</span>
+        <span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">demo</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Your url function &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">parsebody</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">abstract</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;abstract&quot;</span><span class="p">]</span>
+            <span class="n">log</span> <span class="o">=</span> <span class="n">request</span><span class="p">[</span><span class="s2">&quot;log&quot;</span><span class="p">]</span>
+            <span class="c1"># Now do anything you want to do.</span>
+            <span class="c1"># (For example, save log file in the database or send an email.)</span>
+
+    <span class="c1"># Actually, BugTracker doesn&#39;t handle response, but you need this to avoid 500.</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>本mod所有代码开源无混淆。</p>
                 
               
               
@@ -630,6 +860,39 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../bugtracker_content/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              内容
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../luckwater_index/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              简介
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
