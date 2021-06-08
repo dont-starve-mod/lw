@@ -11,9 +11,27 @@
   .md-content figcaption{
     margin-bottom: 0px!important;
   }
+  h3 {
+    /*color: var(--md-accent-fg-color);*/
+    color: var(--md-typeset-a-color);
+  }
+
 </style>
 <script type="text/javascript">
   // START
+  // 批量设置动图宽度
+  function setGifWidth() {
+    var content = document.querySelector('.md-content');
+    if (content != null){
+      var imgs = content.getElementsByTagName('img');
+      for (var i = 0; i < imgs.length; ++i){
+        if (imgs[i].getAttribute('src').endsWith(".gif")){
+          imgs[i].setAttribute('width', '400');
+          imgs[i].setAttribute('loading', 'lazy');
+        }
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -86,10 +104,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', changePalette);
-  } else {
+  function modPageInit() {
     changePalette();
+    setGifWidth();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', modPageInit);
+  } else {
+    modPageInit();
   }
 // END
 </script>
@@ -481,13 +504,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    基础属性
+    近期改动
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    基础属性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     攻击倍数
   </a>
   
@@ -495,14 +525,14 @@
       
         <li class="md-nav__item">
   <a href="#time" class="md-nav__link">
-    时间暂停
+    时间停止
   </a>
   
-    <nav class="md-nav" aria-label="时间暂停">
+    <nav class="md-nav" aria-label="时间停止">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     技能特性
   </a>
   
@@ -514,14 +544,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     精致的怀表
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     实现
   </a>
   
@@ -529,7 +559,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     如何暂停
   </a>
   
@@ -543,14 +573,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     阻止组件更新
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     范围搜索
   </a>
   
@@ -565,6 +595,54 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_gun/" class="md-nav__link">
+        枪械与子弹
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_buff/" class="md-nav__link">
+        武器配件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_bomb/" class="md-nav__link">
+        投掷类武器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_rpg/" class="md-nav__link">
+        火箭发射器
+      </a>
     </li>
   
 
@@ -629,7 +707,7 @@
   
     <li class="md-nav__item">
       <a href="../bugtracker_content/" class="md-nav__link">
-        内容
+        介绍
       </a>
     </li>
   
@@ -746,13 +824,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    基础属性
+    近期改动
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    基础属性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     攻击倍数
   </a>
   
@@ -760,14 +845,14 @@
       
         <li class="md-nav__item">
   <a href="#time" class="md-nav__link">
-    时间暂停
+    时间停止
   </a>
   
-    <nav class="md-nav" aria-label="时间暂停">
+    <nav class="md-nav" aria-label="时间停止">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     技能特性
   </a>
   
@@ -779,14 +864,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     精致的怀表
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     实现
   </a>
   
@@ -794,7 +879,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     如何暂停
   </a>
   
@@ -808,14 +893,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     阻止组件更新
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     范围搜索
   </a>
   
@@ -846,29 +931,43 @@
     src="https://img.imgdb.cn/item/60819577d1a9ae528f501cb8.jpg"
     width="300px"
 /></p>
-<h3 id="_1">基础属性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>饥饿 150 / <strong>生命 75</strong> / 理智 200 </p>
-<p>晓美焰超乎常人的冷静，自带2.5/分钟的理智回复。</p>
-<h3 id="_2">攻击倍数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>近战x0.75 / 远程x1</p>
-<h3 id="time">时间暂停<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
-<p>晓美焰的标志性技能，暂停时间，冻结其他物体的一切行为。当这个技能发动的时候，怪物无法移动和攻击，花草树木不会生长，查理不会伤害黑暗中的玩家，飞行物将被定在原地，雨滴和雪花也会暂时悬浮在半空中。</p>
-<p>技能可通过点按技能图标（在饥饿值图标左侧）来主动触发，持续8秒，冷却时间30秒。</p>
-<h4 id="_3">技能特性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h3 id="_1">近期改动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
+<li>【削弱】新增了一个特性：在时停技能结束前，血量归零的目标仍然可以被玩家攻击。</li>
+</ul>
+<p><img alt="" src="https://pic.imgdb.cn/item/60bf8b13844ef46bb2a765d9.gif" /></p>
+<ul>
+<li>【贴图修复】眼镜焰皮肤的眼镜不会在开枪时消失了，也不会在低san状态下原地不动。</li>
+<li>【优化】新增了一个特效，如下所示，当你发动技能时，你和你的队友都能看到一个向外扩散的力场冲击波。如果不喜欢，你可以在<a href="../homura_index/#settings">模组设置</a>里关掉它。</li>
+</ul>
+<p><img alt="" src="https://pic.imgdb.cn/item/60bf8b13844ef46bb2a76688.gif" /></p>
+<ul>
+<li>【修复】似乎解决了技能按键失效的问题（未确认）。</li>
+</ul>
+<h3 id="_2">基础属性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>饥饿 150 / <strong>生命 75</strong> / 理智 200 </p>
+<p>晓美焰有超乎常人的冷静，自带2.5/分钟的理智回复。</p>
+<h3 id="_3">攻击倍数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>近战x0.75 / 远程x1</p>
+<h3 id="time">时间停止<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
+<p>晓美焰的标志性技能。发动后，怪物不能移动和攻击，花草树木不会生长，查理不会伤害黑暗中的玩家，飞行物、雨滴和雪花也会暂时悬浮在半空中。</p>
+<p>技能可通过点按技能图标（在饥饿值图标左侧）来主动触发。</p>
+<h4 id="_4">技能特性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>持续8秒，冷却30秒。</li>
 <li>非全屏，只影响距离晓美焰附近<strong>10个地皮</strong>范围内的物体。</li>
 <li>其他玩家如果进入范围，也会被暂停。（见“精致的怀表”）</li>
 </ul>
-<h3 id="_4">精致的怀表<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>精致的怀表是一个可以使你免疫时停的小道具，位于魔法栏位，所有玩家均可制作，配方为1金块+1齿轮。</p>
+<h3 id="_5">精致的怀表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>精致的怀表是一个可以使你免疫时停的小道具，位于魔法栏位，所有玩家均可制作，配方为金块和齿轮。</p>
 <p>只要携带这块怀表，就能在晓美焰的时停范围内自由行动了。</p>
-<h3 id="_5">实现<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>如果你是一名mod开发者，对暂停机制比较感兴趣，可以参考下面的源码。</p>
 <p>普通玩家可<a href="#bottom">跳过</a></p>
 <hr />
-<h4 id="_6">如何暂停<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_7">如何暂停<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>饥荒原生的全局暂停接口是 TheSim:SetTimeScale(0)，不过这个玩意儿会让一切物体无差别的冻结，不能用。</p>
-<p>晓美焰的暂停参考的是 EntityScript:RemoveFromScene() 函数，并增加了一些定制的内容，如施加灰色滤镜、阻止 scheduler、component、stategraph 的更新。</p>
+<p>晓美焰的暂停参考的是 EntityScript:RemoveFromScene() 函数，并增加了一些定制的内容，如全屏变灰、阻止 scheduler、component、stategraph 的更新。</p>
 <hr />
 <h4 id="scheduler">scheduler的暂停<a class="headerlink" href="#scheduler" title="Permanent link">&para;</a></h4>
 <p>以干草的燃烧为例，一根草被点燃后，经过7.5秒的燃烧，熄灭变为灰烬，这个过程的计时是基于延时任务函数（DoTaskInTime），详细定义可在饥荒代码 scripts/scheduler.lua 找到。对于这个计时器，官方提供了添加和取消它的方法，但没有提供暂停它的方法，所以得自己写一个。
@@ -900,7 +999,7 @@
 </code></pre></div></p>
 <p>这样一来，物体内部的计时器就被控制住了。这有什么作用呢？例如，一个干草已经燃烧了5秒，此时发动时停技能，则这个燃烧的草不会在技能持续期间突然变成灰烬，而是在技能结束后的2.5秒才熄灭；反之，先在地上摆5个干草，发动技能，趁技能结束前依次点燃这5个干草，那么这些干草会在技能结束后<strong>同时</strong>熄灭。（因为从逻辑上它们是被<strong>同时</strong>点燃）</p>
 <hr />
-<h4 id="_7">阻止组件更新<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_8">阻止组件更新<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>在饥荒中，很多组件存在更新机制，例如海象射出的吹箭，会以每秒30次的频率计算自己和目标的距离，如果距离小于1，就判定为击中目标。我们并不希望在撞上停止运动的飞行物后会受到伤害，所以要阻止组件的更新活动。</p>
 <p>有少部分组件的更新是不应该被暂停的，如container（容器），如果暂停的话，会导致界面无法正常关闭。</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">skip_components</span> <span class="o">=</span> <span class="p">{</span>
@@ -930,10 +1029,10 @@
 </code></pre></div>
 
 <hr />
-<h4 id="_8">范围搜索<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_9">范围搜索<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>为了游戏的流畅性，时停技能显然不应该将饥荒世界里的所有物体都控制住，它只暂停以玩家为中心，40半径范围内的物体，距离太远的东西不会受到影响（玩家一般也看不见）。</p>
 <p>在何时搜索附近实体呢？一般的思路是，在技能发动时搜索一次，把附近所有物体暂停，然后在技能结束时解除暂停状态。但略作思考就能发现问题：假如在技能持续期间，出现了一个新的物体（比如落下来一只鸟），则这个物体是无法受到控制的。因此，我们应该在每次 Update() 时进行一次搜索。</p>
-<p>搜索到的实体以哈希表的形式储存，保证访问速度。</p>
+<p>搜索到的实体以哈希表的形式储存，保证增删操作的速度。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">--以每秒30次的频率搜索附近实体</span>
 <span class="kd">local</span> <span class="kr">function</span> <span class="nf">OnUpdate</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span> 
 
@@ -1010,13 +1109,13 @@
         </a>
       
       
-        <a href="../homura_future/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../homura_gun/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              后续更新计划
+              枪械与子弹
             </div>
           </div>
           <div class="md-footer__button md-icon">

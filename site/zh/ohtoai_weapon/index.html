@@ -11,9 +11,27 @@
   .md-content figcaption{
     margin-bottom: 0px!important;
   }
+  h3 {
+    /*color: var(--md-accent-fg-color);*/
+    color: var(--md-typeset-a-color);
+  }
+
 </style>
 <script type="text/javascript">
   // START
+  // 批量设置动图宽度
+  function setGifWidth() {
+    var content = document.querySelector('.md-content');
+    if (content != null){
+      var imgs = content.getElementsByTagName('img');
+      for (var i = 0; i < imgs.length; ++i){
+        if (imgs[i].getAttribute('src').endsWith(".gif")){
+          imgs[i].setAttribute('width', '400');
+          imgs[i].setAttribute('loading', 'lazy');
+        }
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -86,10 +104,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', changePalette);
-  } else {
+  function modPageInit() {
     changePalette();
+    setGifWidth();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', modPageInit);
+  } else {
+    modPageInit();
   }
 // END
 </script>
@@ -440,8 +463,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#golden-ribbon-" class="md-nav__link">
-    金色缎带 Golden ribbon -- 开发中
+  <a href="#golden-ribbon" class="md-nav__link">
+    金色缎带 Golden ribbon
   </a>
   
 </li>
@@ -520,6 +543,54 @@
   
   
     <li class="md-nav__item">
+      <a href="../homura_gun/" class="md-nav__link">
+        枪械与子弹
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_buff/" class="md-nav__link">
+        武器配件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_bomb/" class="md-nav__link">
+        投掷类武器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_rpg/" class="md-nav__link">
+        火箭发射器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../homura_future/" class="md-nav__link">
         后续更新计划
       </a>
@@ -575,7 +646,7 @@
   
     <li class="md-nav__item">
       <a href="../bugtracker_content/" class="md-nav__link">
-        内容
+        介绍
       </a>
     </li>
   
@@ -705,8 +776,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#golden-ribbon-" class="md-nav__link">
-    金色缎带 Golden ribbon -- 开发中
+  <a href="#golden-ribbon" class="md-nav__link">
+    金色缎带 Golden ribbon
   </a>
   
 </li>
@@ -754,11 +825,11 @@
 <li>照明时间: 500秒</li>
 <li>伤害: 15（熄灭），45-75（点亮）</li>
 </ul>
-<h3 id="golden-ribbon-">金色缎带 Golden ribbon -- 开发中<a class="headerlink" href="#golden-ribbon-" title="Permanent link">&para;</a></h3>
+<h3 id="golden-ribbon">金色缎带 Golden ribbon<a class="headerlink" href="#golden-ribbon" title="Permanent link">&para;</a></h3>
 <p>甩动时如金蛇狂舞，可以对前方大范围的多个目标造成伤害。</p>
 <ul>
 <li>合成公式: 鞭子x1，蜘蛛丝x5</li>
-<li>耐久: 150 </li>
+<li>耐久: 500（命中目标数量越多，耐久损失越快） </li>
 <li>伤害: 40</li>
 <li>可以使用缝纫包和胶布修复。</li>
 </ul>

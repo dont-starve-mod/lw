@@ -11,9 +11,27 @@
   .md-content figcaption{
     margin-bottom: 0px!important;
   }
+  h3 {
+    /*color: var(--md-accent-fg-color);*/
+    color: var(--md-typeset-a-color);
+  }
+
 </style>
 <script type="text/javascript">
   // START
+  // 批量设置动图宽度
+  function setGifWidth() {
+    var content = document.querySelector('.md-content');
+    if (content != null){
+      var imgs = content.getElementsByTagName('img');
+      for (var i = 0; i < imgs.length; ++i){
+        if (imgs[i].getAttribute('src').endsWith(".gif")){
+          imgs[i].setAttribute('width', '400');
+          imgs[i].setAttribute('loading', 'lazy');
+        }
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -86,10 +104,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', changePalette);
-  } else {
+  function modPageInit() {
     changePalette();
+    setGifWidth();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', modPageInit);
+  } else {
+    modPageInit();
   }
 // END
 </script>
@@ -463,6 +486,54 @@
   
   
     <li class="md-nav__item">
+      <a href="../homura_gun/" class="md-nav__link">
+        枪械与子弹
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_buff/" class="md-nav__link">
+        武器配件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_bomb/" class="md-nav__link">
+        投掷类武器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_rpg/" class="md-nav__link">
+        火箭发射器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../homura_future/" class="md-nav__link">
         后续更新计划
       </a>
@@ -520,7 +591,7 @@
   
     <li class="md-nav__item">
       <a href="../bugtracker_content/" class="md-nav__link">
-        内容
+        介绍
       </a>
     </li>
   

@@ -11,9 +11,27 @@
   .md-content figcaption{
     margin-bottom: 0px!important;
   }
+  h3 {
+    /*color: var(--md-accent-fg-color);*/
+    color: var(--md-typeset-a-color);
+  }
+
 </style>
 <script type="text/javascript">
   // START
+  // 批量设置动图宽度
+  function setGifWidth() {
+    var content = document.querySelector('.md-content');
+    if (content != null){
+      var imgs = content.getElementsByTagName('img');
+      for (var i = 0; i < imgs.length; ++i){
+        if (imgs[i].getAttribute('src').endsWith(".gif")){
+          imgs[i].setAttribute('width', '400');
+          imgs[i].setAttribute('loading', 'lazy');
+        }
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -86,10 +104,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', changePalette);
-  } else {
+  function modPageInit() {
     changePalette();
+    setGifWidth();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', modPageInit);
+  } else {
+    modPageInit();
   }
 // END
 </script>
@@ -434,6 +457,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    武器
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -513,6 +543,54 @@
   
   
     <li class="md-nav__item">
+      <a href="../homura_gun/" class="md-nav__link">
+        枪械与子弹
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_buff/" class="md-nav__link">
+        武器配件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_bomb/" class="md-nav__link">
+        投掷类武器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_rpg/" class="md-nav__link">
+        火箭发射器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../homura_future/" class="md-nav__link">
         后续更新计划
       </a>
@@ -568,7 +646,7 @@
   
     <li class="md-nav__item">
       <a href="../bugtracker_content/" class="md-nav__link">
-        内容
+        介绍
       </a>
     </li>
   
@@ -704,6 +782,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    武器
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -734,6 +819,9 @@
 <p>爱在睡觉可以回复更多生命和理智，但是消耗食物的速度也会变快。</p>
 <h3 id="_3">负面效果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>还没想好。<del>这么可爱的女孩子怎么可以有缺点呢。</del></p>
+<h3 id="_4">武器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>大户爱可以制造三种专属武器，武器可以给其他玩家使用。在进入饥荒世界时她自带四色圆珠笔。</p>
+<p><a href="../ohtoai_weapon/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"/></svg></span> 武器说明</a></p>
                 
               
               

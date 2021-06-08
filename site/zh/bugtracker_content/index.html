@@ -11,9 +11,27 @@
   .md-content figcaption{
     margin-bottom: 0px!important;
   }
+  h3 {
+    /*color: var(--md-accent-fg-color);*/
+    color: var(--md-typeset-a-color);
+  }
+
 </style>
 <script type="text/javascript">
   // START
+  // 批量设置动图宽度
+  function setGifWidth() {
+    var content = document.querySelector('.md-content');
+    if (content != null){
+      var imgs = content.getElementsByTagName('img');
+      for (var i = 0; i < imgs.length; ++i){
+        if (imgs[i].getAttribute('src').endsWith(".gif")){
+          imgs[i].setAttribute('width', '400');
+          imgs[i].setAttribute('loading', 'lazy');
+        }
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -86,10 +104,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', changePalette);
-  } else {
+  function modPageInit() {
     changePalette();
+    setGifWidth();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', modPageInit);
+  } else {
+    modPageInit();
   }
 // END
 </script>
@@ -108,7 +131,7 @@
     
     
       
-        <title>内容 - 老王的饥荒模组合集</title>
+        <title>介绍 - 老王的饥荒模组合集</title>
       
     
     
@@ -181,7 +204,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              内容
+              介绍
             
           </span>
         </div>
@@ -463,6 +486,54 @@
   
   
     <li class="md-nav__item">
+      <a href="../homura_gun/" class="md-nav__link">
+        枪械与子弹
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_buff/" class="md-nav__link">
+        武器配件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_bomb/" class="md-nav__link">
+        投掷类武器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homura_rpg/" class="md-nav__link">
+        火箭发射器
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../homura_future/" class="md-nav__link">
         后续更新计划
       </a>
@@ -526,12 +597,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          内容
+          介绍
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        内容
+        介绍
       </a>
       
         
@@ -827,7 +898,7 @@
               
                 
                 
-                  <h1>内容</h1>
+                  <h1>介绍</h1>
                 
                 <p>本mod灵感来自风铃草大佬的loguploader模块，开发过程中也请教了他很多问题，前排感谢！！！</p>
 <h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
