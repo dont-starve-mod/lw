@@ -415,18 +415,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ohtoai_weapon/" class="md-nav__link">
-        武器
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -853,11 +841,15 @@
 <p><img alt="" src="https://img.imgdb.cn/item/605466d4524f85ce291c37da.png" /></p>
 <p>每日发送上限为100封。（理解理解，我怕发的太频繁账号被网易封了）</p>
 <h2 id="url">3.设定URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
-<p>如果你恰好有一个网络服务器，强烈建议你配置一个专用的上传URL，日志信息将直接以POST的方法发送至你的服务器。</p>
+<p>如果你恰好有一个网络服务器，强烈建议你配置一个专用的上传URL，日志信息将直接以<strong>POST</strong>的方法发送至你的服务器。</p>
 <p>该配置的优先级高于 <code>email</code> 。如果同时设置 <code>email</code> 和 <code>url</code> ，只有 <code>url</code> 会生效。</p>
 <div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">-- * 请务必带上协议，如 http:// 或 https://</span>
+    <span class="c1">-- * 请求的url，请务必带上协议，如 http:// 或 https:// 。</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:8000/demo/&quot;</span><span class="p">,</span>
+
+    <span class="c1">-- * 是否自动发送，如果设置为true，在游戏崩溃时就会向服务器发送日志。</span>
+    <span class="c1">-- * 该设置仅对url有效，对email无效。</span>
+    <span class="n">auto_upload</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
 
     <span class="c1">-- 其它配置项目...</span>
 <span class="p">}</span>
@@ -875,17 +867,18 @@
 <span class="sd">    摘要区包含一些基础信息，日志则包含详细的报错内容。</span>
 
 <span class="sd">    摘要结构:</span>
-<span class="sd">    gameversion &lt;str&gt;   饥荒版本号</span>
-<span class="sd">    platform    &lt;str&gt;   运行平台</span>
-<span class="sd">    playername  &lt;str&gt;   向您发送日志的玩家昵称</span>
-<span class="sd">    modname     &lt;str&gt;   模组名</span>
-<span class="sd">    modversion  &lt;str&gt;   模组版本号</span>
-<span class="sd">    diagnose    &lt;str&gt;   诊断信息</span>
-<span class="sd">    timestamp   &lt;int&gt;   崩溃发生的时间戳</span>
-<span class="sd">    ingame      &lt;bool&gt;  崩溃发生在世界启动后</span>
-<span class="sd">    isserver    &lt;bool&gt;  崩溃点位于服务器</span>
-<span class="sd">    isdedicated &lt;bool&gt;  崩溃点位于专用服务器</span>
-<span class="sd">    apiversion  &lt;str&gt;   错误追踪器版本号</span>
+<span class="sd">    gameversion     &lt;str&gt;   饥荒版本号</span>
+<span class="sd">    platform        &lt;str&gt;   运行平台</span>
+<span class="sd">    playername      &lt;str&gt;   向您发送日志的玩家昵称</span>
+<span class="sd">    modname         &lt;str&gt;   模组名</span>
+<span class="sd">    modversion      &lt;str&gt;   模组版本号</span>
+<span class="sd">    diagnose        &lt;str&gt;   诊断信息，如安全/崩溃回溯路径/崩溃点</span>
+<span class="sd">    diagnoselevel   &lt;int&gt;   诊断等级，大于50代表崩溃可能和mod有关，小于50代表其他警告，0代表安全</span>
+<span class="sd">    timestamp       &lt;int&gt;   崩溃发生的时间戳</span>
+<span class="sd">    ingame          &lt;bool&gt;  崩溃发生在世界启动后</span>
+<span class="sd">    isserver        &lt;bool&gt;  崩溃点位于服务器</span>
+<span class="sd">    isdedicated     &lt;bool&gt;  崩溃点位于专用服务器</span>
+<span class="sd">    apiversion      &lt;str&gt;   错误追踪器版本号</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;^&lt;(</span><span class="se">\\</span><span class="s2">d+)&gt;.&quot;</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">match</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
