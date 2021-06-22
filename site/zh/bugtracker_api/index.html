@@ -26,7 +26,9 @@
       var imgs = content.getElementsByTagName('img');
       for (var i = 0; i < imgs.length; ++i){
         if (imgs[i].getAttribute('src').endsWith(".gif")){
-          imgs[i].setAttribute('width', '400');
+          if (!imgs[i].hasAttribute('width')){
+            imgs[i].setAttribute('width', '400');
+          }
           imgs[i].setAttribute('loading', 'lazy');
         }
       }
@@ -621,6 +623,19 @@
     给开发者的留言
   </a>
   
+    <nav class="md-nav" aria-label="给开发者的留言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    所有配置项目一览
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -754,6 +769,19 @@
     给开发者的留言
   </a>
   
+    <nav class="md-nav" aria-label="给开发者的留言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    所有配置项目一览
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -804,21 +832,68 @@
 <span class="p">}</span>
 </code></pre></div>
 
+<h3 id="_2">所有配置项目一览<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>描述</th>
+<th>类型</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>接收日志的邮箱。</td>
+<td>字符串</td>
+<td>myemail@dst.com</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>邮件使用的语言，设定为<code>CHI</code>代表接收中文邮件，否则为英文。</td>
+<td>字符串</td>
+<td>CHI</td>
+</tr>
+<tr>
+<td>url</td>
+<td>接收post请求的地址，优先级高于email，<strong>注意必须带http或https协议</strong>。</td>
+<td>字符串</td>
+<td>http://23.233.2.3:80/upload/ <br> http://my-log-db.cn/upload/</td>
+</tr>
+<tr>
+<td>upload_client_log</td>
+<td>是否接受客户端报错日志，默认true。<br>大部分mod都包含会在客户端运行的代码，所以建议都设置为true。</td>
+<td>布尔</td>
+<td>true</td>
+</tr>
+<tr>
+<td>upload_server_log</td>
+<td>是否接受服务器报错日志，客户端mod默认false，服务器mod默认true。<br>建议默认（不填）。</td>
+<td>布尔</td>
+<td>true</td>
+</tr>
+<tr>
+<td>upload_other_mods_crash_log</td>
+<td>是否接受其它mod引起的报错日志，默认true。</td>
+<td>布尔</td>
+<td>true</td>
+</tr>
+<tr>
+<td>auto_upload</td>
+<td>只要发生崩溃就自动上传日志，默认false。<br>该设定仅对url有效。</td>
+<td>布尔</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1">1.设定接收条件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>你可以指定哪些日志允许上传，避免收到一些无意义的报错信息。</p>
 <p>可<a href="#email">跳过此设置</a>，使用默认值。</p>
 <div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">-- * 是否接受客户端报错日志，默认true。</span>
-    <span class="c1">-- * 大部分mod都包含会在客户端运行的代码，所以建议都设置为true。</span>
-    <span class="n">upload_client_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-
-    <span class="c1">-- * 是否接受服务器报错日志，客户端mod默认false，服务器mod默认true。</span>
-    <span class="c1">-- * 建议默认。</span>
-    <span class="n">upload_server_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-
-    <span class="c1">-- * 是否接受其它mod引起的报错日志，默认true。</span>
-    <span class="c1">-- * 可能有助于解决mod之间的冲突</span>
-    <span class="n">upload_other_mods_crash_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">upload_client_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">-- 接受客户端报错日志</span>
+    <span class="n">upload_server_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">-- 接受服务器报错日志</span>
+    <span class="n">upload_other_mods_crash_log</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- 接受其他mod引起的报错日志</span>
 
     <span class="c1">-- 其它配置项目...</span>
 <span class="p">}</span>
@@ -827,11 +902,8 @@
 <h2 id="email">2.设定邮箱<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
 <p>如果你希望玩家将日志发送到你指定的邮箱，你需要添加<code>email</code>键，如下所示:</p>
 <div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">-- * 注意: 不要设置成工作的邮箱！建议注册一个新邮箱专门用于接收日志。</span>
-    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;myemail@dst.com&quot;</span><span class="p">,</span>
-
-    <span class="c1">-- * 邮件内容默认为英文，如果你想接收中文邮件，请将`lang`键设置为&quot;CHI&quot;。</span>
-    <span class="n">lang</span> <span class="o">=</span> <span class="s2">&quot;CHI&quot;</span><span class="p">,</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;myemail@dst.com&quot;</span><span class="p">,</span> <span class="c1">--注意: 不要设置成工作的邮箱！建议注册一个新邮箱专门用于接收日志。</span>
+    <span class="n">lang</span> <span class="o">=</span> <span class="s2">&quot;CHI&quot;</span><span class="p">,</span> <span class="c1">-- 设置邮件语言为中文</span>
 
     <span class="c1">-- 其它配置项目...</span>
 <span class="p">}</span>
@@ -844,12 +916,8 @@
 <p>如果你恰好有一个网络服务器，强烈建议你配置一个专用的上传URL，日志信息将直接以<strong>POST</strong>的方法发送至你的服务器。</p>
 <p>该配置的优先级高于 <code>email</code> 。如果同时设置 <code>email</code> 和 <code>url</code> ，只有 <code>url</code> 会生效。</p>
 <div class="highlight"><pre><span></span><code><span class="n">bugtracker_config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">-- * 请求的url，请务必带上协议，如 http:// 或 https:// 。</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:8000/demo/&quot;</span><span class="p">,</span>
-
-    <span class="c1">-- * 是否自动发送，如果设置为true，在游戏崩溃时就会向服务器发送日志。</span>
-    <span class="c1">-- * 该设置仅对url有效，对email无效。</span>
-    <span class="n">auto_upload</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://127.0.0.1:8000/demo/&quot;</span><span class="p">,</span>  <span class="c1">-- 请求的url，请务必带上协议，如 http:// </span>
+    <span class="n">auto_upload</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- 设置为自动发送日志，该配置项目仅对url有效</span>
 
     <span class="c1">-- 其它配置项目...</span>
 <span class="p">}</span>

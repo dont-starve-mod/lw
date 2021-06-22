@@ -26,7 +26,9 @@
       var imgs = content.getElementsByTagName('img');
       for (var i = 0; i < imgs.length; ++i){
         if (imgs[i].getAttribute('src').endsWith(".gif")){
-          imgs[i].setAttribute('width', '400');
+          if (!imgs[i].hasAttribute('width')){
+            imgs[i].setAttribute('width', '400');
+          }
           imgs[i].setAttribute('loading', 'lazy');
         }
       }
@@ -175,7 +177,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mod" class="md-skip">
           跳转至
         </a>
       
@@ -435,6 +437,13 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mod" class="md-nav__link">
+    订阅mod
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -785,6 +794,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mod" class="md-nav__link">
+    订阅mod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     角色介绍
   </a>
@@ -877,6 +893,11 @@ background-color: rgb(255,230,230);
 
 </div>
 
+<h3 id="mod">订阅mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
+<ul>
+<li>单机版：开发中...</li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2516445504"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"/></svg></span> 联机版</a></li>
+</ul>
 <h3 id="_1">角色介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>大户爱是原创动画《奇蛋物语》（ワンダーエッグ・プライオリティ / Wonder Egg Priority）中的女主角。
 <figure>

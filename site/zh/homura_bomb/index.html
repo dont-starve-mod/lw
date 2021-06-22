@@ -26,7 +26,9 @@
       var imgs = content.getElementsByTagName('img');
       for (var i = 0; i < imgs.length; ++i){
         if (imgs[i].getAttribute('src').endsWith(".gif")){
-          imgs[i].setAttribute('width', '400');
+          if (!imgs[i].hasAttribute('width')){
+            imgs[i].setAttribute('width', '400');
+          }
           imgs[i].setAttribute('loading', 'lazy');
         }
       }
@@ -841,6 +843,7 @@
 <li>路径B：粉饼x10，鸟粪x1。</li>
 </ul>
 <p>点击制作面板的图标切换合成方案。</p>
+<p><img alt="" src="https://pic.imgdb.cn/item/60d156f3844ef46bb20de9bd.gif" width="200" /></p>
 <h3 id="_2">雷管<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">c_give</span><span class="p">(</span><span class="s2">&quot;homura_deconator&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div>

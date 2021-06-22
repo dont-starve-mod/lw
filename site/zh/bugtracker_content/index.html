@@ -26,7 +26,9 @@
       var imgs = content.getElementsByTagName('img');
       for (var i = 0; i < imgs.length; ++i){
         if (imgs[i].getAttribute('src').endsWith(".gif")){
-          imgs[i].setAttribute('width', '400');
+          if (!imgs[i].hasAttribute('width')){
+            imgs[i].setAttribute('width', '400');
+          }
           imgs[i].setAttribute('loading', 'lazy');
         }
       }
