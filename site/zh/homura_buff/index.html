@@ -1024,6 +1024,7 @@
 <li>【增强/削弱】风车：召唤旋风的概率提升，但只有miss时才召唤；移除对玩家的移速加成。</li>
 <li>【增强】魔术回路：增加附加的真实伤害量，增加每发子弹的理智损耗。</li>
 <li>【增强】四次元的弹夹：容量统一扩展至5倍。</li>
+<li>【调整】眼睛现在只允许安装在AWM的第一格配件槽。</li>
 <li>【新增】三个机制独特的配件——迷你虫洞、棱镜、<span msg="你是不是用网页检查器偷看更新内容了？" class="block">绿色植物盆栽</span>。<a href="#wormhole">跳转-&gt;</a></li>
 </ul>
 <h3 id="_2">科技要求<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -1081,7 +1082,7 @@
 <th align="left">安装数</th>
 <th align="left">子弹速度</th>
 <th align="left">射程</th>
-<th align="left">穿透数</th>
+<th align="left">增加穿透数</th>
 </tr>
 </thead>
 <tbody>
@@ -1089,22 +1090,25 @@
 <td align="left"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span></td>
 <td align="left">+20%</td>
 <td align="left">+10%</td>
-<td align="left">2</td>
+<td align="left">+1</td>
 </tr>
 <tr>
 <td align="left"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span></td>
 <td align="left">+40%</td>
 <td align="left">+20%</td>
-<td align="left">4</td>
+<td align="left">+2</td>
 </tr>
 <tr>
 <td align="left"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.36 10.46-7.82-7.82c-.85-.85-2.23-.85-3.08 0l-7.82 7.82c-.85.85-.85 2.23 0 3.08l7.82 7.82c.85.85 2.23.85 3.08 0l7.82-7.82c.85-.85.85-2.23 0-3.08M12 19l-7-7 7-7 7 7-7 7m4.5-7L12 16.5 7.5 12 12 7.5l4.5 4.5z"/></svg></span></td>
 <td align="left">+60%</td>
 <td align="left">+30%</td>
-<td align="left">6</td>
+<td align="left">+3</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>注意: 当子弹穿过物理碰撞体积较大的目标，将进行多次伤害判定</strong>。如巨鹿的碰撞半径为1.5（取整至2），若安装1个电磁加速线圈，子弹穿透数为2，命中巨鹿会造成2次伤害，并耗尽2层穿透数，子弹消失。</li>
+</ul>
 <h3 id="lv2">制冷装置<a class="headerlink" href="#lv2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>本产品不含氟利昂。</li>
@@ -1213,9 +1217,9 @@
 </ul>
 <h3 id="_11">眼睛<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
+<li>狙击枪专用的高级瞄准镜。</li>
 <li>配方：红点准镜×1，巨鹿眼球×1，金块×4。</li>
-<li>效果：狙击。</li>
-<li>本配件的效果被暂时移除了，在下次更新中会回归。</li>
+<li>效果：使枪可以进行远距离狙击，只对AWM生效，其他武器无法安装。</li>
 </ul>
 <h3 id="_12">牛顿的棺材板<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>
