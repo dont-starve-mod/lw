@@ -34,6 +34,16 @@
       }
     }
   }
+  // 批量修改小图标大小
+  function setTitleIconWidth() {
+    var imgs = document.querySelectorAll('h3>img');
+    for (var i = 0; i < imgs.length; ++i){
+      if (!imgs[i].hasAttribute('width')){
+        imgs[i].setAttribute('width', '35');
+        imgs[i].setAttribute('style', 'margin-right:8px;vertical-align:middle;');
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -109,6 +119,7 @@
   function modPageInit() {
     changePalette();
     setGifWidth();
+    setTitleIconWidth();
   }
 
   if (document.readyState === 'loading') {

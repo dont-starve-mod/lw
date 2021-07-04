@@ -34,6 +34,16 @@
       }
     }
   }
+  // 批量修改小图标大小
+  function setTitleIconWidth() {
+    var imgs = document.querySelectorAll('h3>img');
+    for (var i = 0; i < imgs.length; ++i){
+      if (!imgs[i].hasAttribute('width')){
+        imgs[i].setAttribute('width', '35');
+        imgs[i].setAttribute('style', 'margin-right:8px;vertical-align:middle;');
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -109,6 +119,7 @@
   function modPageInit() {
     changePalette();
     setGifWidth();
+    setTitleIconWidth();
   }
 
   if (document.readyState === 'loading') {
@@ -468,13 +479,6 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    负面效果
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     武器
   </a>
   
@@ -502,8 +506,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    宠物莱昂（并没有做好）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    宠物莱昂（开发中）
+    其他
   </a>
   
 </li>
@@ -823,13 +834,6 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    负面效果
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     武器
   </a>
   
@@ -857,8 +861,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    宠物莱昂（并没有做好）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    宠物莱昂（开发中）
+    其他
   </a>
   
 </li>
@@ -895,7 +906,6 @@ background-color: rgb(255,230,230);
 
 <h3 id="mod">订阅mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
 <ul>
-<li>单机版：开发中...</li>
 <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2516445504"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"/></svg></span> 联机版</a></li>
 </ul>
 <h3 id="_1">角色介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -915,10 +925,8 @@ background-color: rgb(255,230,230);
 <p>俗称一威。</p>
 <h3 id="_3">梦境强化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>爱在睡觉可以回复更多生命和理智，但是消耗食物的速度也会变快。</p>
-<h3 id="_4">负面效果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>还没想好。<del>这么可爱的女孩子怎么可以有缺点呢。</del><br><span style="color:transparent;">其实，大户爱的缺点就是没有任何优点。</span></p>
 <hr />
-<h3 id="_5">武器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_4">武器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>大户爱可以制造三种专属武器，武器可以给其他玩家使用。在进入饥荒世界时她自带四色圆珠笔。</p>
 <h3 id="ballpoint-pen">四色圆珠笔 Ballpoint pen<a class="headerlink" href="#ballpoint-pen" title="Permanent link">&para;</a></h3>
 <p>一支巨大的圆珠笔，挥动它得用点力气，要是被砸中了可不是闹着玩的。</p>
@@ -950,11 +958,12 @@ background-color: rgb(255,230,230);
 <li>伤害: 40</li>
 <li>可以使用缝纫包和胶布修复。</li>
 </ul>
-<h3 id="_6">宠物莱昂（开发中）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_5">宠物莱昂（并没有做好）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>一只能帮忙打架的变色龙。</p>
 <p>右键点击莱昂，可以让它伸出舌头把你拉过去，拉动过程无视地形障碍。</p>
-<p>目前并没有做好。</p>
 <p>注意：爱无法领养其他宠物。</p>
+<h3 id="_6">其他<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>我不打算做单机版了。</p>
                 
               
               

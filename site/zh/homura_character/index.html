@@ -34,6 +34,16 @@
       }
     }
   }
+  // 批量修改小图标大小
+  function setTitleIconWidth() {
+    var imgs = document.querySelectorAll('h3>img');
+    for (var i = 0; i < imgs.length; ++i){
+      if (!imgs[i].hasAttribute('width')){
+        imgs[i].setAttribute('width', '35');
+        imgs[i].setAttribute('style', 'margin-right:8px;vertical-align:middle;');
+      }
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -109,6 +119,7 @@
   function modPageInit() {
     changePalette();
     setGifWidth();
+    setTitleIconWidth();
   }
 
   if (document.readyState === 'loading') {
@@ -922,19 +933,6 @@
     width="300px"
 /></p>
 <h3 id="_1">近期改动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div style="
-border-width: 2px;
-border-color: purple;
-border-radius: 5px;
-border-style: double;
-padding: 5px 20px !important;
-background-color: rgb(255,230,255);
-">
-
-<p>武器配件<b>“眼睛”</b>正在考虑重做，它的效果被暂时移除了，在下次更新时会回归。</p>
-
-</div>
-
 <ul>
 <li>【削弱】新增了一个特性：在时停技能结束前，血量归零的目标仍然可以被玩家攻击。</li>
 </ul>
