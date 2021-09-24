@@ -698,14 +698,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    加载时崩溃（红色）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    已正常加载（绿色）
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     日志发送
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-config" class="md-nav__link">
+    尚未适配?
   </a>
   
 </li>
@@ -933,14 +954,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    加载时崩溃（红色）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    已正常加载（绿色）
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     日志发送
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-config" class="md-nav__link">
+    尚未适配?
   </a>
   
 </li>
@@ -983,21 +1025,30 @@
 <h2 id="_4">错误定位<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>发生崩溃后，哪个mod应该背锅呢？</p>
 <h3 id="_5">崩溃点（深红色）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>指示错误发生的实际位置。游戏本体或者具体的某个mod。</p>
+<p>指示错误发生的实际位置。可能是游戏本体或者具体的某个mod。</p>
 <h3 id="_6">回溯路径（红色）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>引发错误的链条中的一环。</p>
+<p>mod位于引发错误的链条中的一环。</p>
 <h3 id="_7">警告（黄色）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>mod虽然不在错误链条內，但是本身存在一些不容忽视的问题。</p>
+<p>mod虽然不在错误链条內，但是本身存在一些不容忽视的问题。这些问题可能是引发错误的元凶。</p>
 <h3 id="_8">安全（绿色）<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>没有问题。</p>
 <div class="admonition note">
 <p><span style="font-size: 14px">这个功能利用了Lua的debugtrace来分析引起崩溃的mod。只能处理Lua逻辑层的错误，无法处理c++底层问题！</span></p>
 <p><span style="font-size: 14px">分析结果仅供参考。在mod数量很多的情况下，引起崩溃的过程可能会相当复杂，不保证100%的定位准确度。</span></p>
 </div>
-<h2 id="_9">日志发送<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="_9">加载时崩溃（红色）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>mod文件在加载过程中就发生了错误，服务器启动失败。</p>
+<h3 id="_10">已正常加载（绿色）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>mod文件已被正常的加载到游戏中。</p>
+<h2 id="_11">日志发送<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>发现一个mod确实有问题，但不知道怎么通知作者修复？</p>
 <p>本mod附带了日志发送功能，只要点一下，就能把报错信息发送给mod开发者。当然，开发者要预先做相关的适配。</p>
 <p><a href="../bugtracker_api/">如果你是一名mod开发者，请看这里</a></p>
+<h2 id="no-config">尚未适配?<a class="headerlink" href="#no-config" title="Permanent link">&para;</a></h2>
+<p>mod发生错误后，若右侧日志发送的按钮上显示【尚未适配】，这表示该mod开发者还没有进行相关的配置，无法直接将报错日志发送过去。</p>
+<p>如果你能通过其他途径（如steam、qq、微信）联系到mod开发者，你可以先点击上方绿色的【查看日志】，在弹出的网页中复制所有报错信息，然后手动反馈。</p>
+<p>当然，你可以将配置方法（ <a href="https://dont-starve-mod.github.io/lw/zh/bugtracker_api/">https://dont-starve-mod.github.io/lw/zh/bugtracker_api/</a>  ）分享给开发者，让ta了解到这个实用的工具，并自行考虑是否进行适配。</p>
 <h2 id="modbug">那这个mod自己到底有没有bug？<a class="headerlink" href="#modbug" title="Permanent link">&para;</a></h2>
 <p>我也不是很清楚，如果你感觉它出问题了，请联系我。</p>
                 

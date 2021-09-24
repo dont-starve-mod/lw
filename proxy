@@ -1,0 +1,2 @@
+git config https.proxy 8001
+git config http.proxy 8001
