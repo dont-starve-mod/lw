@@ -718,8 +718,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-c" class="md-nav__link">
-    4. c++底层错误
+  <a href="#4" class="md-nav__link">
+    4. 移除组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-c" class="md-nav__link">
+    5. c++底层错误
   </a>
   
 </li>
@@ -903,8 +910,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-c" class="md-nav__link">
-    4. c++底层错误
+  <a href="#4" class="md-nav__link">
+    4. 移除组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-c" class="md-nav__link">
+    5. c++底层错误
   </a>
   
 </li>
@@ -973,8 +987,12 @@
 
 <p>强制覆盖源文件是非常糟糕的操作，会严重影响mod的兼容性和稳定性。</p>
 <p>错误追踪能检测mod是否有覆盖操作并给出警告。如果某些报错定位到游戏本体，你可以试着关闭一些有覆盖警告的mod。</p>
+<h4 id="4">4. 移除组件<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>一些mod会错误的移除关键组件，移除过程本身不报错，但如果再次尝试调用这个不存在的组件就会发生崩溃。</p>
+<p>一个典型例子是 Loot pump（传送泵）和晓美焰的冲突，由于传送泵会强制移除晓美焰手雷的「投掷」组件，导致拿起手雷的瞬间报错，且错误定位在晓美焰mod内部。</p>
+<p>（我已经反馈这个问题了但是作者一直不修）</p>
 <p><br></p>
-<h4 id="4-c">4. c++底层错误<a class="headerlink" href="#4-c" title="Permanent link">&para;</a></h4>
+<h4 id="5-c">5. c++底层错误<a class="headerlink" href="#5-c" title="Permanent link">&para;</a></h4>
 <p>这类错误往往会导致游戏直接闪退</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- modmain.lua</span>
 <span class="c1">-- 假设同时加载的两个动画文件 apple 和 peach 共用一个材质名 fruit，游戏进程会直接结束，任何mod包括错误追踪当然无法运行</span>
