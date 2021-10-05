@@ -703,6 +703,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    忽略部分钩子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     源代码
   </a>
   
@@ -723,6 +730,18 @@
     <li class="md-nav__item">
       <a href="../bugtracker_update/" class="md-nav__link">
         更新日志
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bugtracker_qa/" class="md-nav__link">
+        问题和回答
       </a>
     </li>
   
@@ -905,6 +924,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    忽略部分钩子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     源代码
   </a>
   
@@ -1091,7 +1117,47 @@
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<h2 id="_4">源代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">忽略部分钩子<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>功能开发中...</p>
+<p>如果你的mod中修改了某些常用函数，这可能会导致mod常常出现在回溯路径内。</p>
+<p>举例:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- modmain.lua</span>
+<span class="kd">local</span> <span class="n">old_ce</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">.</span><span class="n">CreateEntity</span>
+<span class="kr">function</span> <span class="nc">GLOBAL</span><span class="p">.</span><span class="nf">CreateEntity</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello don&#39;t starve!&quot;</span><span class="p">)</span>
+    <span class="kr">return</span> <span class="n">old_ce</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+
+<p>由于 CreateEntity 函数会被频繁调用，在报错路径出镜率极高，这会让你的mod也无辜中枪，被错误追踪检测到。</p>
+<p>为了解决这一问题，未来将加入忽略标记，以使特定的钩子不被错误追踪识别为报错路径。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- modmain.lua</span>
+<span class="kd">local</span> <span class="n">old_ce</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">.</span><span class="n">CreateEntity</span>
+<span class="kr">function</span> <span class="nc">GLOBAL</span><span class="p">.</span><span class="nf">CreateEntity</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello don&#39;t starve!&quot;</span><span class="p">)</span>
+
+    <span class="kd">local</span> <span class="n">bugtracker_ignore_flag__CreateEntity</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- 标记</span>
+    <span class="kr">return</span> <span class="n">old_ce</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+
+<p>添加标记后，你的这处修改就会被错误追踪忽略。但请务必确保你的修改是符合逻辑的！注意观察下面的代码。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- modmain.lua</span>
+<span class="kd">local</span> <span class="n">old_ce</span> <span class="o">=</span> <span class="n">GLOBAL</span><span class="p">.</span><span class="n">CreateEntity</span>
+<span class="kr">function</span> <span class="nc">GLOBAL</span><span class="p">.</span><span class="nf">CreateEntity</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello don&#39;t starve!&quot;</span><span class="p">)</span>
+
+    <span class="kd">local</span> <span class="n">bugtracker_ignore_flag__CreateEntity</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- 标记</span>
+    <span class="c1">-- return old_ce() -- 错误的写法，缺少原始参数</span>
+    <span class="c1">-- old_ce(name)    -- 错误的写法，未返回，注意原始的 CreateEntity 函数有返回值</span>
+
+    <span class="kr">return</span> <span class="n">old_ce</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1">-- 正确</span>
+<span class="kr">end</span>
+</code></pre></div>
+
+<p>如果你不能百分百确认你的钩子安全，那就不要加入这个标记。</p>
+<p>功能开发中，下个版本会有。</p>
+<h2 id="_5">源代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>本mod所有代码开源无混淆，如果你对本mod的实现有任何疑问，可直接查看源代码。</p>
                 
               
