@@ -672,27 +672,34 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    警告（黄色）
+    高危（红色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    安全（绿色）
+    警告（黄色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    加载时崩溃（红色）
+    安全（绿色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    加载时崩溃（红色）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     已正常加载（绿色）
   </a>
   
@@ -959,27 +966,34 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    警告（黄色）
+    高危（红色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    安全（绿色）
+    警告（黄色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    加载时崩溃（红色）
+    安全（绿色）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    加载时崩溃（红色）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     已正常加载（绿色）
   </a>
   
@@ -1088,18 +1102,22 @@
 <p>指示错误发生的实际位置。可能是游戏本体或者具体的某个mod。</p>
 <h3 id="_3">回溯路径（红色）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>mod位于引发错误的链条中的一环。</p>
-<h3 id="_4">警告（黄色）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">高危（红色）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>mod存在严重问题，极易引起崩溃，且长时间未更新。</p>
+<p>当前被标记为高危的mod：
+- <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=949822556">workshop-949822556</a> - 蛋疼排队论 </p>
+<h3 id="_5">警告（黄色）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>mod虽然不在错误链条內，但是本身存在一些不容忽视的问题。这些问题可能是引发错误的元凶。</p>
-<h3 id="_5">安全（绿色）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">安全（绿色）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>未检测出问题。</p>
 <div class="admonition note">
 <p><span style="font-size: 14px">这个功能利用了Lua的debugtrace来分析引起崩溃的mod。只能处理Lua逻辑层的错误，无法处理c++底层问题！</span></p>
 <p><span style="font-size: 14px">分析结果仅供参考。在mod数量很多的情况下，引起崩溃的过程可能会相当复杂，不保证100%的定位准确度。关于错误检测功能的局限性，参考<a href="../bugtracker_qa/">链接</a>。</span></p>
 </div>
 <hr />
-<h3 id="_6">加载时崩溃（红色）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">加载时崩溃（红色）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>mod文件在加载过程中就发生了错误，服务器启动失败。</p>
-<h3 id="_7">已正常加载（绿色）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_8">已正常加载（绿色）<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>mod文件已被正常的加载到游戏中。</p>
 <h2 id="client">2.客户端日志同步<a class="headerlink" href="#client" title="Permanent link">&para;</a></h2>
 <p>开启洞穴和作为客户端加入其他人房间时，如果服务器发生错误，只会显示“你与服务器断开连接”，不提示任何错误信息。</p>
