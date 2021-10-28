@@ -56,6 +56,33 @@
       }
     }
   }
+  // 添加视频
+  function setVideos() {
+    var videos = document.querySelectorAll('video');
+    for (var i = 0; i < videos.length; ++i){
+      var v = videos[i];
+      if (!v.hasAttribute('autoplay')){
+        v.setAttribute('autoplay', 'autoplay');
+      }
+      if (!v.hasAttribute('muted')){
+        v.setAttribute('muted', 'muted');
+      }
+      if (!v.hasAttribute('loop')){
+        v.setAttribute('loop', 'loop');
+      }
+      if (!v.hasAttribute('width')){
+        v.setAttribute('width', '400');
+      }
+      // var name = v.getAttribute('lw-name');
+      // var source = document.createElement('source');
+      // source.setAttribute('src', 'http://mod.3vcm.vip/videos/'+name);
+      // source.setAttribute('type', 'video/mp4');
+      // v.appendChild(source);
+
+      var txt =document.createTextNode("'您的浏览器不支持 video 标签，建议使用 Chrome、Safari、Edge 等现代浏览器。'");
+      v.appendChild(txt);
+    }
+  }
   // 添加新js脚本调整颜色
   function getPalette() {
     var path = location.pathname;
@@ -132,6 +159,7 @@
     changePalette();
     setGifWidth();
     setTitleIconWidth();
+    setVideos();
   }
 
   if (document.readyState === 'loading') {
