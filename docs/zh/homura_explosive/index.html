@@ -28,6 +28,14 @@
     font-weight: 600;
   }
 
+  @media screen and (max-width:750px){ 
+    video{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
 </style>
 <script type="text/javascript">
   // START
@@ -63,6 +71,12 @@
       var v = videos[i];
       if (!v.hasAttribute('autoplay')){
         v.setAttribute('autoplay', 'autoplay');
+      }
+      if (!v.hasAttribute('playsinline')){
+        v.setAttribute('playsinline', 'playsinline');
+      }
+      if (!v.hasAttribute('webkit-playsinline')){
+        v.setAttribute('webkit-playsinline', 'webkit-playsinline');
       }
       if (!v.hasAttribute('muted')){
         v.setAttribute('muted', 'muted');
@@ -988,7 +1002,7 @@ background-color: rgba(255,100,255, 0.1);
 <li><a href="#bomb">手雷</a>：伤害不俗，还能摧毁建筑。</li>
 <li><a href="#fire">莫洛托夫鸡尾酒</a>：稳定的持续范围伤害。</li>
 <li><a href="#flash">闪光弹</a>：控场，消除仇恨，<del>坑队友</del>。</li>
-<li><a href="#stick">刺突爆雷</a>：近战武器，威力巨大，但也会伤到使用者。</li>
+<li><a href="#stick">刺突爆雷</a>：近战武器，威力巨大，但也会波及到使用者。</li>
 <li><a href="#rpg">火箭发射器</a>：远程打击，需要装弹。</li>
 <li><a href="#rpgammo">火箭助推榴弹</a>：用于装填火箭发射器。</li>
 </ul>
@@ -1045,14 +1059,17 @@ background-color: rgba(255,100,255, 0.1);
 
 <ul>
 <li>近战武器，击中目标时引发爆炸，造成250范围伤害和摧毁效果，同时对使用者造成20伤害。</li>
-<li>
-<p>配方：雷管x1，树枝x1，蜂刺x1。</p>
-</li>
-<li>
-<p>手持刺雷跑动会进入冲刺状态，移速上升。</p>
-</li>
+<li>配方：雷管x1，树枝x1，蜂刺x1。</li>
+<li>在静止的时间中，刺雷不会爆炸。</li>
+</ul>
+<video autoplay muted loop playsinline webkit-playsinline src='http://mod.3vcm.vip/videos/sticktimemagic.mp4'></video>
+
+<ul>
+<li>手持刺雷跑动，玩家进入冲刺状态，移速提高。</li>
 <li>在冲刺状态下<strong>碰撞</strong>到任何可攻击目标，都会引爆刺雷。</li>
 </ul>
+<video autoplay muted loop playsinline webkit-playsinline src='http://mod.3vcm.vip/videos/stickrush.mp4' ></video>
+
 <hr />
 <h3 id="rpg">火箭发射器（RPG）<a class="headerlink" href="#rpg" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">c_give</span><span class="p">(</span><span class="s2">&quot;homura_rpg&quot;</span><span class="p">)</span>

@@ -28,6 +28,14 @@
     font-weight: 600;
   }
 
+  @media screen and (max-width:750px){ 
+    video{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
 </style>
 <script type="text/javascript">
   // START
@@ -63,6 +71,12 @@
       var v = videos[i];
       if (!v.hasAttribute('autoplay')){
         v.setAttribute('autoplay', 'autoplay');
+      }
+      if (!v.hasAttribute('playsinline')){
+        v.setAttribute('playsinline', 'playsinline');
+      }
+      if (!v.hasAttribute('webkit-playsinline')){
+        v.setAttribute('webkit-playsinline', 'webkit-playsinline');
       }
       if (!v.hasAttribute('muted')){
         v.setAttribute('muted', 'muted');
