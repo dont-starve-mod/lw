@@ -616,6 +616,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 时间同步
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -630,8 +637,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    出现一些bug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    游戏出现掉帧卡顿
+    游戏掉帧卡顿
   </a>
   
 </li>
@@ -639,13 +653,6 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     某个物品无法带进/带出洞穴
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bug" class="md-nav__link">
-    出现一些bug
   </a>
   
 </li>
@@ -1136,6 +1143,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 时间同步
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1150,8 +1164,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    出现一些bug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    游戏出现掉帧卡顿
+    游戏掉帧卡顿
   </a>
   
 </li>
@@ -1159,13 +1180,6 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     某个物品无法带进/带出洞穴
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bug" class="md-nav__link">
-    出现一些bug
   </a>
   
 </li>
@@ -1215,7 +1229,7 @@
 </a></p>
 <p>【独行长路/Don't Starve Alone】 是一个<strong>消除延迟</strong>的辅助mod，该mod只适用于<strong>单人</strong>联机。</p>
 <p>正常情况下，饥荒会同时运行地面和洞穴两个世界，这样才能保证多名玩家能自由地在地面和洞穴玩耍。</p>
-<p>开启本mod后，由于是单人模式，只有一名玩家，当玩家在地面，就运行地面世界，当玩家在洞穴，就运行洞穴世界。每次只运行一个世界，游戏性能负担就会大大减轻，并能完全解决延迟问题。</p>
+<p>开启本mod后，由于是单人模式，只有一名玩家，当玩家在地面，就运行地面世界，当玩家在洞穴，就运行洞穴世界。在只运行一个世界的情况下，玩家始终是主机，也就不存在什么延迟问题了，还能减轻游戏性能负担。</p>
 <p>不是减少延迟，而是完全消除延迟！</p>
 <p><span style="color: red">本mod尚处于测试阶段，使用前请仔细阅读下方说明！</span></p>
 <hr />
@@ -1255,23 +1269,16 @@
 </div>
 <h4 id="3_1">3. 自动保存<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
 <p>和单机版类似，每次下洞穴或者回到地面都会额外触发一次自动保存。</p>
+<p>由于你始终是主机，所以<strong>每次保存时都会出现轻微的卡顿</strong>，这是正常现象。</p>
 <h4 id="4">4. 重新生成世界<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <p>该功能暂时无法使用，如果需要重新生成世界，请直接创建一个新存档。</p>
 <h4 id="5">5. 无法在专服使用<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
 <p>如果本mod被添加到专服，会强制崩溃。</p>
+<h4 id="6">6. 时间同步<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<p>正常情况下，洞穴和地面的时间会自动同步，植物生长、boss刷新、四季、月相等计时器也会照常运行。</p>
+<p>部分依赖于世界运行的机制将失效，例如：当你位于地面时，洞穴内的海星不会定期造成范围伤害。</p>
+<p>如果遇到时间不同步的情况，请向我反馈，并附上一份存档文件。</p>
 <h3 id="qa">常见问题<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
-<h4 id="_4">游戏出现掉帧卡顿<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>按如下流程处理：</p>
-<ol>
-<li>创建新存档，只添加【独行长路】这一个mod，进去玩几分钟。</li>
-<li>如果仍然有掉帧，说明你的电脑带不动，建议订阅一些能清理地面物品的防卡mod（如掉落物自动堆叠）。假如你财力雄厚，也可以考虑换一台12900k，5950x或者m1。</li>
-<li>如果不掉帧了，那说明是一些mod的原因。一些大型mod（如【Tropical Experience，三合一】）和一些优化较差的mod（如【tips，提示猎狗和BOSS的攻击时间】）会对游戏性能造成很大的负担，关闭这些mod可能会改善掉帧的问题。</li>
-</ol>
-<hr />
-<p><em><span style="color:grey">关于tips为什么优化差，因为这个mod会频繁遍历全局实例哈希表Ents（大小约为30000），这对单核性能弱的电脑就是个灾难...</span></em></p>
-<hr />
-<h4 id="_5">某个物品无法带进/带出洞穴<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>请先查一查这个物品本身究竟能否带进洞穴，比如切斯特眼骨是没法带进洞穴的。</p>
 <h4 id="bug">出现一些bug<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h4>
 <p>如果遇到bug，请先确认是否由【独行长路】造成。</p>
 <ol>
@@ -1279,6 +1286,7 @@
 <li>也可创建新存档，只添加除【独行长路】以外的其他mod，观察bug能否被重现。</li>
 <li>如果bug确实和【独行长路】相关，再向作者反馈。</li>
 </ol>
+<p><span style="font-weight:700;color:red;">为确保能快速修复bug，在反馈时请附带一份<u>存档的压缩包</u>，百度云/蓝奏云均可。</span></p>
 <hr />
 <p>下面是一些有用的控制台命令，有助于排查模组bug：</p>
 <table>
@@ -1314,7 +1322,7 @@
 <td align="left">跳过一定的时间，但不影响玩家三围</td>
 </tr>
 <tr>
-<td align="left"><code>TheWorld.map.minimap:EnableFogOfWar(false)</code></td>
+<td align="left"><code>TheWorld.minimap.MiniMap:EnableFogOfWar(false)</code></td>
 <td align="left">小地图全显示（该指令仅在主机生效）</td>
 </tr>
 <tr>
@@ -1324,6 +1332,18 @@
 </tbody>
 </table>
 <hr />
+<h4 id="_4">游戏掉帧卡顿<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>按如下流程处理：</p>
+<ol>
+<li>创建新存档，只添加【独行长路】这一个mod，进去玩几分钟。</li>
+<li>如果仍然有掉帧，说明你的电脑带不动，建议订阅一些能清理地面物品的防卡mod（如掉落物自动堆叠）。假如你财力雄厚，也可以考虑换一台12900k，5950x或者m1。</li>
+<li>如果不掉帧了，那说明是一些mod的原因。一些大型mod（如【Tropical Experience，三合一】）和一些优化较差的mod（如【tips，提示猎狗和BOSS的攻击时间】）会对游戏性能造成很大的负担，关闭这些mod可能会改善掉帧的问题。</li>
+</ol>
+<hr />
+<p><em><span style="color:grey">关于tips为什么优化差，因为这个mod会频繁遍历全局实例哈希表Ents（大小约为30000），这对单核性能弱的电脑就是个灾难...</span></em></p>
+<hr />
+<h4 id="_5">某个物品无法带进/带出洞穴<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>请先查一查这个物品本身究竟能否带进洞穴，比如切斯特眼骨是没法带进洞穴的。</p>
 <h4 id="_6">多人版本<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>正如名字所示，【独行长路/Don't Starve Alone】只适合单人世界，后续的版本也不会支持多人游戏。</p>
 <p>如果你需要改善多人联机模式下的延迟问题，我觉得你应该去找klei的程序员，让他把游戏的Network tick rate从15改成30。</p>
