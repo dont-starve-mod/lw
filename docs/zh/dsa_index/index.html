@@ -622,7 +622,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     常见问题
   </a>
   
@@ -630,21 +630,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     游戏出现掉帧卡顿
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     某个物品无法带进/带出洞穴
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#bug" class="md-nav__link">
+    出现一些bug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     多人版本
   </a>
   
@@ -656,14 +663,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     开发进度
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     友情链接
   </a>
   
@@ -1135,7 +1142,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     常见问题
   </a>
   
@@ -1143,21 +1150,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     游戏出现掉帧卡顿
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     某个物品无法带进/带出洞穴
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#bug" class="md-nav__link">
+    出现一些bug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     多人版本
   </a>
   
@@ -1169,14 +1183,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     开发进度
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     友情链接
   </a>
   
@@ -1245,8 +1259,8 @@
 <p>该功能暂时无法使用，如果需要重新生成世界，请直接创建一个新存档。</p>
 <h4 id="5">5. 无法在专服使用<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
 <p>如果本mod被添加到专服，会强制崩溃。</p>
-<h3 id="_4">常见问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h4 id="_5">游戏出现掉帧卡顿<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="qa">常见问题<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
+<h4 id="_4">游戏出现掉帧卡顿<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>按如下流程处理：</p>
 <ol>
 <li>创建新存档，只添加【独行长路】这一个mod，进去玩几分钟。</li>
@@ -1256,13 +1270,65 @@
 <hr />
 <p><em><span style="color:grey">关于tips为什么优化差，因为这个mod会频繁遍历全局实例哈希表Ents（大小约为30000），这对单核性能弱的电脑就是个灾难...</span></em></p>
 <hr />
-<h4 id="_6">某个物品无法带进/带出洞穴<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_5">某个物品无法带进/带出洞穴<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>请先查一查这个物品本身究竟能否带进洞穴，比如切斯特眼骨是没法带进洞穴的。</p>
-<h4 id="_7">多人版本<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="bug">出现一些bug<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h4>
+<p>如果遇到bug，请先确认是否由【独行长路】造成。</p>
+<ol>
+<li>创建新存档，只添加【独行长路】这一个mod，观察bug能否被重现。</li>
+<li>也可创建新存档，只添加除【独行长路】以外的其他mod，观察bug能否被重现。</li>
+<li>如果bug确实和【独行长路】相关，再向作者反馈。</li>
+</ol>
+<hr />
+<p>下面是一些有用的控制台命令，有助于排查模组bug：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>c_freecrafting() </code></td>
+<td align="left">开启物品全制造</td>
+</tr>
+<tr>
+<td align="left"><code>c_godmode()</code></td>
+<td align="left">开启无敌，死亡后输入该指令可以复活</td>
+</tr>
+<tr>
+<td align="left"><code>c_save()</td>
+<td align="left">立刻保存</td>
+</tr>
+<tr>
+<td align="left"><code>c_gonext"cave_entrance"</code></td>
+<td align="left">传送到洞穴入口</td>
+</tr>
+<tr>
+<td align="left"><code>LongUpdate(480)</code></td>
+<td align="left">跳过一定的时间，数字代表秒数，如480秒代表饥荒的一天</td>
+</tr>
+<tr>
+<td align="left"><code>LongUpdate(480, true)</code></td>
+<td align="left">跳过一定的时间，但不影响玩家三围</td>
+</tr>
+<tr>
+<td align="left"><code>TheWorld.map.minimap:EnableFogOfWar(false)</code></td>
+<td align="left">小地图全显示（该指令仅在主机生效）</td>
+</tr>
+<tr>
+<td align="left"><code>SetDefaultTimeScale(2)</td>
+<td align="left">将游戏速度设置为2倍速</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="_6">多人版本<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>正如名字所示，【独行长路/Don't Starve Alone】只适合单人世界，后续的版本也不会支持多人游戏。</p>
 <p>如果你需要改善多人联机模式下的延迟问题，我觉得你应该去找klei的程序员，让他把游戏的Network tick rate从15改成30。</p>
 <hr />
-<h3 id="_8">开发进度<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_7">开发进度<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 跨世界传送<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 上下洞穴</li>
@@ -1288,7 +1354,7 @@
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 支持修改世界设置</p>
 </li>
 </ul>
-<h3 id="_9">友情链接<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_8">友情链接<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../home/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"/></svg></span> 作者的其他mod</a></li>
 <li><a href="../author/#connect"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"/></svg></span> 联系方式</a></li>
