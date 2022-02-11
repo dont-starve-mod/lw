@@ -207,14 +207,14 @@
         <meta name="author" content="老王">
       
       
-        <link rel="canonical" href="https://dont-starve-mod.gitee.io/ohto-ai-doc/zh/homura_rpg/">
+        <link rel="canonical" href="https://dont-starve-mod.gitee.io/ohto-ai-doc/zh/homura_structure/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
-        <title>Homura rpg - 老王的饥荒模组合集</title>
+        <title>建筑 - 老王的饥荒模组合集</title>
       
     
     
@@ -258,7 +258,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rpg" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -290,7 +290,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Homura rpg
+              建筑
             
           </span>
         </div>
@@ -367,13 +367,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../homura_index/" class="md-tabs__link">
+      <a href="../homura_index/" class="md-tabs__link md-tabs__link--active">
         晓美焰
       </a>
     </li>
@@ -556,12 +558,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -610,11 +614,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../homura_structure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          建筑
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         建筑
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    热武器工作台
+  </a>
+  
+    <nav class="md-nav" aria-label="热武器工作台">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    晓美焰
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他角色
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    支援信标
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -976,6 +1048,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -984,15 +1058,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rpg" class="md-nav__link">
-    火箭发射器（RPG）
+  <a href="#_2" class="md-nav__link">
+    热武器工作台
   </a>
+  
+    <nav class="md-nav" aria-label="热武器工作台">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    晓美焰
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他角色
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rpgammo" class="md-nav__link">
-    火箭助推榴弹
+  <a href="#_5" class="md-nav__link">
+    支援信标
   </a>
   
 </li>
@@ -1010,25 +1104,30 @@
               
                 
 
-  <h1>Homura rpg</h1>
-
-<h3 id="rpg">火箭发射器（RPG）<a class="headerlink" href="#rpg" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="n">c_give</span><span class="p">(</span><span class="s2">&quot;homura_rpg&quot;</span><span class="p">)</span>
+<h1 id="_1">专属建筑<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<h3 id="_2">热武器工作台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">c_spawn</span><span class="s2">&quot;homura_workdesk_1&quot;</span>
 </code></pre></div>
-<img alt="" src="https://pic.imgdb.cn/item/6205ea0d2ab3f51d9127f8f7.gif" /></p>
+<p>晓美焰的高科技工作台，可以在上面制作各种热武器。普通玩家也可以使用，但需要先阅读操作手册。</p>
+<h4 id="_3">晓美焰<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>范围攻击的远程武器，威力非常大，但会点燃攻击目标。</li>
-<li>配方：火箭助推榴弹x1，鳞片x1，火焰吹箭x1。</li>
-<li>配件槽：1。<em>一般来说，对火箭发射器最有用的配件是制冷装置（移除点燃效果）和四次元的弹夹（增加弹夹容量）。</em></li>
-<li>弹夹容量：3。</li>
-<li>基础伤害：300。</li>
+<li>可以建造新的工作台，可以使用工作台。</li>
+<li>可以编写工作台的操作手册，交给其他玩家阅读。</li>
+<li>在工作台边制造各种热武器的时间减半。</li>
 </ul>
-<h3 id="rpgammo">火箭助推榴弹<a class="headerlink" href="#rpgammo" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">c_give</span><span class="p">(</span><span class="s2">&quot;homura_rpg_ammo1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<h4 id="_4">其他角色<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>无法建造工作台，且开局无法使用工作台。</li>
+<li>可以阅读操作手册，阅读完毕后解锁工作台的使用权限。</li>
+</ul>
+<h3 id="_5">支援信标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">c_spawn</span><span class="s2">&quot;homura_tower_1&quot;</span>
 </code></pre></div>
 <ul>
-<li>用于装填火箭发射器。</li>
-<li>配方：雷管x5，木头x2，榴莲x1。 -&gt; 5发</li>
+<li>激活发送信号，在信标旁会掉落一个空投，里面有免费的物资，每次呼叫后需要一段时间充能。</li>
+<li>可升级至最高3级，等级越高，充能时间越长，物资越丰富。</li>
+<li>无法在洞穴内建造，且只能建造一座。如果地图上存在多个信标，信号会互相干扰导致无法使用。</li>
 </ul>
 
               
@@ -1044,6 +1143,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../homura_character/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 人物" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              人物
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../homura_explosive/" class="md-footer__link md-footer__link--next" aria-label="下一页: 爆破" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              爆破
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
